@@ -124,6 +124,34 @@ public class Carrello {
 
         }
 
+
+        System.out.println("Hai la carta fedelta?");
+        System.out.println("1 - Si");
+        System.out.println("2 - No");
+
+        int cardOption = Integer.parseInt(input.nextLine());
+
+        switch (cardOption){
+
+            case 1:
+                int i = 0;
+                double total = 0;
+                System.out.println(carrello.length);
+                while (i < productsNumber) {
+                    carrello[i].getDiscout(true);
+                    total += carrello[i].getPrice();
+                    ++i;
+                }
+                System.out.println("Sconto applicato sui prodotti del carrello.");
+                System.out.println("Dettagli carrello:");
+                System.out.println(Arrays.toString(carrello));
+                System.out.println("Totale: $" + total );
+                break;
+            case 2:
+                System.out.println("Dettagli carrello:");
+                System.out.println("Carrello");
+        }
+
     }
 
 }

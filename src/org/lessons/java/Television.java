@@ -31,6 +31,18 @@ public class Television extends Prodotto{
     }
 
     @Override
+    public double getDiscout(boolean haveCard) {
+        if(smart){
+            double price = getPrice();
+            price -= (getPrice() * 10) /100;
+            setPrice(price);
+            return getPrice();
+        }else {
+            return super.getDiscout(haveCard);
+        }
+    }
+
+    @Override
     public String toString() {
         return super.toString() +
                 "Television{" +

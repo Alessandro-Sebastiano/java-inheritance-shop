@@ -65,6 +65,12 @@ public class Prodotto {
         return format.format(price + (price * iva) / 100);
     }
 
+    public double getDiscout(boolean haveCard){
+
+             return this.price -= (getPrice() * 2) / 100;
+
+    }
+
     @Override
     public String toString() {
         return "Prodotto{" +

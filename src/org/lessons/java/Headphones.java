@@ -28,6 +28,18 @@ public class Headphones extends Prodotto{
     }
 
     @Override
+    public double getDiscout(boolean haveCard) {
+        if(wireless){
+            double price = getPrice();
+            price -= (getPrice() * 7) /100;
+            setPrice(price);
+            return getPrice();
+        }else {
+            return super.getDiscout(haveCard);
+        }
+    }
+
+    @Override
     public String toString() {
         return super.toString() +
                 "Headphones{" +

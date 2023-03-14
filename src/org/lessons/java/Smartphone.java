@@ -31,6 +31,18 @@ public class Smartphone extends Prodotto{
     }
 
     @Override
+    public double getDiscout(boolean haveCard) {
+        if (haveCard && getStorage() < 33) {
+            double price = getPrice();
+            price -= (getPrice() * 5) / 100;
+            setPrice(price);
+            return getPrice();
+        } else {
+             return super.getDiscout(haveCard);
+        }
+    }
+
+    @Override
     public String toString() {
         return super.toString() +
                 "Smartphone{" +
